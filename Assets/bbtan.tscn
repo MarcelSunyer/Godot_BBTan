@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpecsebefoj5i"]
+[gd_scene load_steps=6 format=3 uid="uid://bpecsebefoj5i"]
 
-[ext_resource type="Script" path="res://bbtan.gd" id="1_g0l0b"]
+[ext_resource type="Script" path="res://Assets/Scripts/bbtan.gd" id="1_g0l0b"]
 [ext_resource type="Texture2D" uid="uid://cwrrwas2m6eak" path="res://Assets/images/BBTAN-bot-game.png" id="2_y5d72"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_60ldp"]
-size = Vector2(51, 231)
 
 [sub_resource type="Animation" id="Animation_g77u1"]
 resource_name = "Move"
@@ -44,7 +41,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(283, 822)
+position = Vector2(281, 824)
 scale = Vector2(0.564713, 0.564713)
 script = ExtResource("1_g0l0b")
 
@@ -53,10 +50,6 @@ position = Vector2(-1.235, 0)
 rotation = -0.0698132
 scale = Vector2(0.954, 0.945)
 texture = ExtResource("2_y5d72")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(13, 10)
-shape = SubResource("RectangleShape2D_60ldp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
