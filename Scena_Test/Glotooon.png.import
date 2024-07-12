@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0vo4jgxpfipm"
-path="res://.godot/imported/Glotooon.png-05845fd5ba909f0be4d2dbda8335b5de.ctex"
+path="res://.godot/imported/Glotooon.png-4999cde18d0a0612b4215cc1be15b13d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Glotooon.png"
-dest_files=["res://.godot/imported/Glotooon.png-05845fd5ba909f0be4d2dbda8335b5de.ctex"]
+source_file="res://Scena_Test/Glotooon.png"
+dest_files=["res://.godot/imported/Glotooon.png-4999cde18d0a0612b4215cc1be15b13d.ctex"]
 
 [params]
 

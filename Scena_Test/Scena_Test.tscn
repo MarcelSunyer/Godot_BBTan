@@ -1,13 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwhu6kbxplsve"]
+[gd_scene load_steps=10 format=3 uid="uid://bwhu6kbxplsve"]
 
 [ext_resource type="Texture2D" uid="uid://dgx2rkhrgxhxt" path="res://icon.svg" id="1_6vpi0"]
-[ext_resource type="Script" path="res://Scena_Test/Disk.gd" id="2_r7obu"]
-[ext_resource type="Texture2D" uid="uid://b0vo4jgxpfipm" path="res://Glotooon.png" id="3_ap5mu"]
+[ext_resource type="Script" path="res://Scritps/Disk.gd" id="2_r7obu"]
+[ext_resource type="Texture2D" uid="uid://cfkuxwqclov6q" path="res://Scena_Test/Pointer.png" id="3_4e8tj"]
+[ext_resource type="Texture2D" uid="uid://b0vo4jgxpfipm" path="res://Scena_Test/Glotooon.png" id="3_ap5mu"]
+[ext_resource type="Script" path="res://Scritps/Pointer.gd" id="4_p3slx"]
+[ext_resource type="Script" path="res://Scena_Test/Glotooon.gd" id="6_ytjfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sim8r"]
 size = Vector2(127, 127)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1ndw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63nby"]
+size = Vector2(1142.6, 14.5333)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-236, 180)
@@ -79,9 +85,25 @@ scale = Vector2(0.0915415, 0.0694625)
 texture = ExtResource("1_6vpi0")
 
 [node name="Glotooon" type="Sprite2D" parent="."]
-position = Vector2(240.195, 642.425)
+position = Vector2(29.2988, 645)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_ap5mu")
+script = ExtResource("6_ytjfo")
+
+[node name="Pointer" type="Sprite2D" parent="Glotooon"]
+position = Vector2(176.888, -48.5)
+rotation = 1.5708
+scale = Vector2(5.27988, 7.1999)
+texture = ExtResource("3_4e8tj")
+offset = Vector2(-575.655, 0)
+script = ExtResource("4_p3slx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Glotooon/Pointer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Glotooon/Pointer/StaticBody2D"]
+position = Vector2(-560.619, 1.45482)
+shape = SubResource("RectangleShape2D_63nby")
+one_way_collision = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(246.947, 251)
