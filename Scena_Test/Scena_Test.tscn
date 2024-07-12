@@ -9,7 +9,8 @@ size = Vector2(127, 127)
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1ndw"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(409, 195)
+position = Vector2(-4, 181)
+scale = Vector2(0.955672, 1)
 
 [node name="Walls" type="Node2D" parent="."]
 
