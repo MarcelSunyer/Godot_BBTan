@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpecsebefoj5i"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/bbtan.gd" id="1_g0l0b"]
+[ext_resource type="Texture2D" uid="uid://cgf7gf7x8rwpk" path="res://Assets/images/Ball.png" id="2_8dn6q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nast4"]
+radius = 12.7695
+
+[sub_resource type="Animation" id="Animation_h7bt3"]
+resource_name = "move"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -3.14093, -6.27897]
+}
+
+[sub_resource type="Animation" id="Animation_njwnc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jh0ll"]
+_data = {
+"RESET": SubResource("Animation_njwnc"),
+"move": SubResource("Animation_h7bt3")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(242, 748)
+scale = Vector2(0.564713, 0.564713)
+script = ExtResource("1_g0l0b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(-0.1, -0.1)
+texture = ExtResource("2_8dn6q")
+offset = Vector2(0, 16.625)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -2.46228
+shape = SubResource("CircleShape2D_nast4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jh0ll")
+}

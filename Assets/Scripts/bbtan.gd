@@ -1,13 +1,22 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 var numero: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("Move") # Replace with function body.
+	$AnimationPlayer.play("move") # Replace with function body.
+	
 
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var direccion = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = direccion * 200
-	move_and_slide()
+	var mouse_click_left = Input.is_action_just_pressed("left_click")
+	
+	if mouse_click_left:
+		set_linear_velocity(Vector2(100,-600))
+		
+	var mouse_click_right = Input.is_action_just_pressed("right_click")
+	
+	if mouse_click_right:
+		linear_velocity = Vector2(-100,-600)
+
