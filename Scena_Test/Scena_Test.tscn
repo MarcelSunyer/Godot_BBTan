@@ -2,17 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://dgx2rkhrgxhxt" path="res://icon.svg" id="1_6vpi0"]
 [ext_resource type="Script" path="res://Scena_Test/Disk.gd" id="2_r7obu"]
+[ext_resource type="Texture2D" uid="uid://b0vo4jgxpfipm" path="res://Glotooon.png" id="3_ap5mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sim8r"]
 size = Vector2(127, 127)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1ndw"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_74qqi"]
-load_path = "res://.godot/imported/spaceship-R.png-26bd32a090faedc5cba1147027364b56.ctex"
-
 [node name="Node2D" type="Node2D"]
-position = Vector2(-4, 181)
+position = Vector2(-236, 180)
 scale = Vector2(0.955672, 1)
 
 [node name="Walls" type="Node2D" parent="."]
@@ -66,20 +64,24 @@ texture = ExtResource("1_6vpi0")
 position = Vector2(64.5, 64.5)
 shape = SubResource("RectangleShape2D_sim8r")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Balon" type="CharacterBody2D" parent="."]
+position = Vector2(256.937, 630.425)
 script = ExtResource("2_r7obu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(131, 104)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balon"]
+position = Vector2(0.626724, -0.554382)
 scale = Vector2(0.68, 0.64)
 shape = SubResource("CircleShape2D_s1ndw")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(131, 104)
+[node name="Sprite2D" type="Sprite2D" parent="Balon"]
+position = Vector2(0.626709, -0.554382)
 scale = Vector2(0.0915415, 0.0694625)
 texture = ExtResource("1_6vpi0")
 
-[node name="Spaceship-r" type="Sprite2D" parent="."]
-position = Vector2(332.75, 628)
-scale = Vector2(0.0350243, 0.0350243)
-texture = SubResource("CompressedTexture2D_74qqi")
+[node name="Glotooon" type="Sprite2D" parent="."]
+position = Vector2(240.195, 642.425)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_ap5mu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(246.947, 251)
