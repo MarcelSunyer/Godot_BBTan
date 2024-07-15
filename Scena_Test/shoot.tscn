@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dutlshiutna2e"]
+
+[ext_resource type="Script" path="res://Scritps/Num_shoots.gd" id="1_pbpjv"]
+[ext_resource type="PackedScene" uid="uid://csfdbqux2ytk8" path="res://Scena_Test/ball.tscn" id="2_3fgy6"]
+
+[node name="Shoot" type="Node2D"]
+script = ExtResource("1_pbpjv")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Balon" parent="." instance=ExtResource("2_3fgy6")]

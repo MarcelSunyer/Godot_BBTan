@@ -1,12 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwhu6kbxplsve"]
+[gd_scene load_steps=8 format=3 uid="uid://bwhu6kbxplsve"]
 
 [ext_resource type="Texture2D" uid="uid://dgx2rkhrgxhxt" path="res://icon.svg" id="1_6vpi0"]
+[ext_resource type="Script" path="res://Scritps/Disk.gd" id="2_r7obu"]
 [ext_resource type="Texture2D" uid="uid://b0vo4jgxpfipm" path="res://Scena_Test/Glotooon.png" id="3_ap5mu"]
-[ext_resource type="PackedScene" uid="uid://dutlshiutna2e" path="res://Scena_Test/shoot.tscn" id="4_4vpiy"]
-[ext_resource type="Script" path="res://Scritps/Apuntado.gd" id="4_p3slx"]
+[ext_resource type="Script" path="res://Scritps/Pointer.gd" id="4_p3slx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sim8r"]
 size = Vector2(127, 127)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1ndw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvq44"]
 size = Vector2(920.818, 80.0002)
@@ -38,7 +40,7 @@ position = Vector2(66, 66)
 texture = ExtResource("1_6vpi0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
-position = Vector2(64.3475, 68.1023)
+position = Vector2(64.5, 64.5)
 shape = SubResource("RectangleShape2D_sim8r")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
@@ -66,6 +68,20 @@ texture = ExtResource("1_6vpi0")
 position = Vector2(64.5, 64.5)
 shape = SubResource("RectangleShape2D_sim8r")
 
+[node name="Balon" type="CharacterBody2D" parent="."]
+position = Vector2(256.937, 630.425)
+script = ExtResource("2_r7obu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balon"]
+position = Vector2(0.626724, -0.554382)
+scale = Vector2(0.68, 0.64)
+shape = SubResource("CircleShape2D_s1ndw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Balon"]
+position = Vector2(0.626709, -0.554382)
+scale = Vector2(0.0915415, 0.0694625)
+texture = ExtResource("1_6vpi0")
+
 [node name="Glotooon" type="Sprite2D" parent="."]
 position = Vector2(128.705, 660)
 scale = Vector2(0.05, 0.05)
@@ -81,5 +97,3 @@ shape = SubResource("RectangleShape2D_jvq44")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(246.947, 251)
-
-[node name="Shoot" parent="." instance=ExtResource("4_4vpiy")]
