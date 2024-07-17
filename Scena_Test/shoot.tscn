@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dutlshiutna2e"]
+[gd_scene load_steps=3 format=3 uid="uid://x2r4plujrw3y"]
 
 [ext_resource type="Script" path="res://Scritps/Num_shoots.gd" id="1_pbpjv"]
 [ext_resource type="PackedScene" uid="uid://csfdbqux2ytk8" path="res://Scena_Test/ball.tscn" id="2_3fgy6"]
@@ -10,3 +10,4 @@ script = ExtResource("1_pbpjv")
 autostart = true
 
 [node name="Balon" parent="." instance=ExtResource("2_3fgy6")]
+collision_layer = 0
