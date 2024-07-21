@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bwhu6kbxplsve"]
 
-[ext_resource type="Texture2D" uid="uid://dgx2rkhrgxhxt" path="res://icon.svg" id="1_cvka2"]
-[ext_resource type="Texture2D" uid="uid://b0vo4jgxpfipm" path="res://Imagenes/Glotooon.png" id="2_g1156"]
-[ext_resource type="Script" path="res://Scritps/Apuntado.gd" id="3_a8uqa"]
-[ext_resource type="Script" path="res://Scritps/Shoots.gd" id="4_mehxb"]
+[ext_resource type="Texture2D" uid="uid://dgx2rkhrgxhxt" path="res://icon.svg" id="1_0wesq"]
+[ext_resource type="Texture2D" uid="uid://b0vo4jgxpfipm" path="res://Imagenes/Glotooon.png" id="2_fqk5b"]
+[ext_resource type="Script" path="res://Scritps/Apuntado.gd" id="3_ffui0"]
+[ext_resource type="Script" path="res://Scritps/Shoots.gd" id="4_0ttpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sim8r"]
 size = Vector2(127, 127)
@@ -15,9 +15,6 @@ size = Vector2(920.818, 80.0002)
 position = Vector2(-236, 180)
 scale = Vector2(0.955672, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(246.947, 251)
-
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
@@ -26,7 +23,7 @@ scale = Vector2(3.71174, 0.211435)
 
 [node name="Sprite2D" type="Sprite2D" parent="Walls/StaticBody2D"]
 position = Vector2(66, 66)
-texture = ExtResource("1_cvka2")
+texture = ExtResource("1_0wesq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
 position = Vector2(64.5, 64.5)
@@ -38,7 +35,7 @@ scale = Vector2(3.7564, 0.205573)
 
 [node name="Sprite2D" type="Sprite2D" parent="Walls/StaticBody2D2"]
 position = Vector2(66, 66)
-texture = ExtResource("1_cvka2")
+texture = ExtResource("1_0wesq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
 position = Vector2(64.3475, 68.1023)
@@ -50,7 +47,7 @@ scale = Vector2(0.162683, 6.81913)
 
 [node name="Sprite2D" type="Sprite2D" parent="Walls/StaticBody2D3"]
 position = Vector2(66, 66)
-texture = ExtResource("1_cvka2")
+texture = ExtResource("1_0wesq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
 position = Vector2(64.5, 64.5)
@@ -63,7 +60,7 @@ scale = Vector2(0.103432, -6.82742)
 
 [node name="Sprite2D" type="Sprite2D" parent="Walls/StaticBody2D4"]
 position = Vector2(66, 66)
-texture = ExtResource("1_cvka2")
+texture = ExtResource("1_0wesq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
 position = Vector2(64.5, 64.5)
@@ -72,10 +69,10 @@ shape = SubResource("RectangleShape2D_sim8r")
 [node name="Glotooon" type="Sprite2D" parent="."]
 position = Vector2(128.705, 660)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_g1156")
+texture = ExtResource("2_fqk5b")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Glotooon"]
-script = ExtResource("3_a8uqa")
+script = ExtResource("3_ffui0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Glotooon/CharacterBody2D"]
 position = Vector2(-20.928, 400)
@@ -85,6 +82,8 @@ shape = SubResource("RectangleShape2D_jvq44")
 [node name="Shoot" type="CharacterBody2D" parent="Glotooon"]
 position = Vector2(565.052, 0)
 scale = Vector2(20, 20)
-script = ExtResource("4_mehxb")
-balls = 2
-interval_vall_spawn = 1.0
+script = ExtResource("4_0ttpa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(246.947, 251)
+scale = Vector2(1, 1)

@@ -7,8 +7,9 @@
 radius = 22.4722
 
 [node name="Ball" type="CharacterBody2D"]
-position = Vector2(351, 366)
-scale = Vector2(-1, 0.855)
+position = Vector2(0, -6)
+scale = Vector2(-11.009, 9.35899)
+collision_layer = 0
 script = ExtResource("1_a2ubv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
