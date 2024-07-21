@@ -75,13 +75,15 @@ texture = ExtResource("2_fqk5b")
 script = ExtResource("3_ffui0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Glotooon/CharacterBody2D"]
+visible = false
 position = Vector2(-20.928, 400)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_jvq44")
 
 [node name="Shoot" type="CharacterBody2D" parent="Glotooon"]
 position = Vector2(565.052, 0)
-scale = Vector2(-97.307, 100)
+rotation = 3.14159
+scale = Vector2(97.307, -100)
 script = ExtResource("4_0ttpa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
