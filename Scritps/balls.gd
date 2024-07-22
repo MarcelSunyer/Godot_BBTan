@@ -9,8 +9,9 @@ func _physics_process(delta):
 	# Mover la bola
 	var collision_info = move_and_collide(ball_speed * delta)
 	if collision_info:
+		var body = collision_info.get_collider()
+		if body is StaticBody2D and body.name == "Gloton":
+			queue_free()
 		ball_speed = ball_speed.bounce(collision_info.get_normal())
-	print_debug(position)
-	# Verificar si la bola ha alcanzado la posición límite
-	if position.y >= limit_position:
-		queue_free()  # Eliminar la bola de la escena
+		
+
