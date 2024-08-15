@@ -1,4 +1,45 @@
-[gd_scene format=3 uid="uid://drqe23shkgaxc"]
+[gd_scene load_steps=3 format=3 uid="uid://drqe23shkgaxc"]
 
-[node name="Node2D" type="Node2D"]
-metadata/_edit_group_ = true
+[ext_resource type="PackedScene" uid="uid://br6x0goa8rsv2" path="res://Ball.tscn" id="1_pwxex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kayl7"]
+size = Vector2(50, 1158)
+
+[node name="Scnene" type="Node2D"]
+
+[node name="Paredes" type="Node2D" parent="."]
+position = Vector2(0, 30)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Paredes"]
+position = Vector2(9, 162)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D"]
+position = Vector2(-34, 419)
+shape = SubResource("RectangleShape2D_kayl7")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Paredes"]
+position = Vector2(704, 162)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D2"]
+position = Vector2(-34, 419)
+shape = SubResource("RectangleShape2D_kayl7")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Paredes"]
+position = Vector2(842, -41)
+scale = Vector2(15.212, 0.04)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D3"]
+position = Vector2(-34, 419)
+shape = SubResource("RectangleShape2D_kayl7")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Paredes"]
+position = Vector2(783, 1151)
+scale = Vector2(13.6414, 0.0400275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D4"]
+position = Vector2(-34, 419)
+shape = SubResource("RectangleShape2D_kayl7")
+
+[node name="Ball" parent="." instance=ExtResource("1_pwxex")]
+position = Vector2(264, 470)
+speed = 500.0
