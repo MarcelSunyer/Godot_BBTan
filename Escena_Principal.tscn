@@ -33,8 +33,9 @@ position = Vector2(-34, 419)
 shape = SubResource("RectangleShape2D_kayl7")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Paredes"]
-position = Vector2(783, 1151)
+position = Vector2(783, 778)
 scale = Vector2(13.6414, 0.0400275)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D4"]
 position = Vector2(-34, 419)
