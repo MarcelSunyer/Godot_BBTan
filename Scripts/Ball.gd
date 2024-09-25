@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed = 250.0
 var move_ball = false
 
+@export var balls = 1;
+
 # Define la capa de colisión del suelo (por ejemplo, layer 1)
 @export var suelo_layer = 1
 

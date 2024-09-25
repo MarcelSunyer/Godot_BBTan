@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://drqe23shkgaxc"]
+[gd_scene load_steps=4 format=3 uid="uid://drqe23shkgaxc"]
 
 [ext_resource type="PackedScene" uid="uid://br6x0goa8rsv2" path="res://Ball.tscn" id="1_pwxex"]
+[ext_resource type="Script" path="res://copia.gd" id="2_i3ros"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kayl7"]
 size = Vector2(50, 1158)
@@ -43,4 +44,6 @@ shape = SubResource("RectangleShape2D_kayl7")
 
 [node name="Ball" parent="." instance=ExtResource("1_pwxex")]
 position = Vector2(301, 689)
-metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("2_i3ros")

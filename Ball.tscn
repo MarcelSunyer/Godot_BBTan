@@ -6,16 +6,16 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_f5y53"]
 
 [node name="Ball" type="CharacterBody2D"]
-position = Vector2(235, 191)
+position = Vector2(159, 918)
 collision_mask = 3
 script = ExtResource("1_4gjwa")
+speed = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 36)
+position = Vector2(1, 0)
 scale = Vector2(-2.33333, -2.33333)
 shape = SubResource("CircleShape2D_f5y53")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 36)
 scale = Vector2(0.290972, 0.290972)
 texture = ExtResource("2_vbgjk")
