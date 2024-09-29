@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://drqe23shkgaxc"]
+[gd_scene load_steps=4 format=3 uid="uid://drqe23shkgaxc"]
 
 [ext_resource type="Script" path="res://Scripts/shooter.gd" id="1_eguow"]
-[ext_resource type="Texture2D" uid="uid://b7pbnqwvq0kim" path="res://Sprites/Ball.png" id="1_g35mx"]
 [ext_resource type="Texture2D" uid="uid://db0jiugpkilyg" path="res://Sprites/BBTAN-bot-game.png" id="2_8ukjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kayl7"]
@@ -16,7 +15,6 @@ scale = Vector2(0.996591, 1.03007)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Paredes"]
 position = Vector2(9, 162)
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D"]
 position = Vector2(-34, 419)
@@ -25,7 +23,6 @@ shape = SubResource("RectangleShape2D_kayl7")
 [node name="StaticBody2D2" type="StaticBody2D" parent="Paredes"]
 position = Vector2(706.408, 92.2272)
 scale = Vector2(1, 0.84467)
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D2"]
 position = Vector2(-34, 419)
@@ -34,26 +31,19 @@ shape = SubResource("RectangleShape2D_kayl7")
 [node name="StaticBody2D3" type="StaticBody2D" parent="Paredes"]
 position = Vector2(842, -41)
 scale = Vector2(15.212, 0.04)
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D3"]
 position = Vector2(-34, 419)
 shape = SubResource("RectangleShape2D_kayl7")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Paredes"]
-position = Vector2(794.709, 912.559)
+position = Vector2(792.702, 898.972)
 scale = Vector2(13.6414, 0.0400275)
-collision_layer = 4
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D4"]
-position = Vector2(-33.542, -2473.96)
+position = Vector2(-34, 419)
 shape = SubResource("RectangleShape2D_kayl7")
-
-[node name="Sprite2D" type="Sprite2D" parent="Paredes/StaticBody2D4"]
-modulate = Color(0.215686, 0, 0, 1)
-position = Vector2(-31.2617, -2886.27)
-scale = Vector2(0.252661, 1)
-texture = ExtResource("1_g35mx")
 
 [node name="shooter" type="Node2D" parent="."]
 position = Vector2(-45, 807)

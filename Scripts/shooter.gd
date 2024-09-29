@@ -10,15 +10,15 @@ var current_shots = 0
 	
 func _process(delta):
 	if Input.is_action_just_pressed("Left_click"):
-		cooldown_timer.start()
+		if get_global_mouse_position().y <= 750:
+			cooldown_timer.start()
+	print_debug(get_global_mouse_position().y)
 
-# Shoots a projectile
+
 func shoot():
-	var instance = projectile_scene.instantiate()
-	instance.dir = rotation  # Set the projectile's direction based on the current rotation
-
-	instance.spawnPos = global_position  # Set to the global position of the current node
-	main.add_child.call_deferred(instance)
+		var instance = projectile_scene.instantiate()
+		instance.spawnPos = global_position
+		main.add_child.call_deferred(instance)
 
 func _on_cooldown_timeout():
 	if(current_shots <= max_shoots):
