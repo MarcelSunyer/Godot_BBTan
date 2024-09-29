@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db0jiugpkilyg"
-path="res://.godot/imported/BBTAN-bot-game.png-69eab9be9fa28e3bbece4268e903445b.ctex"
+uid="uid://b7pbnqwvq0kim"
+path="res://.godot/imported/Ball.png-4e6e58f62343d577c3d22d908457c6a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BBTAN-bot-game.png"
-dest_files=["res://.godot/imported/BBTAN-bot-game.png-69eab9be9fa28e3bbece4268e903445b.ctex"]
+source_file="res://Sprites/Ball.png"
+dest_files=["res://.godot/imported/Ball.png-4e6e58f62343d577c3d22d908457c6a4.ctex"]
 
 [params]
 

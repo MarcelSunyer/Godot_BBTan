@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://drqe23shkgaxc"]
+
+[ext_resource type="Script" path="res://Scripts/shooter.gd" id="1_eguow"]
+[ext_resource type="Texture2D" uid="uid://db0jiugpkilyg" path="res://Sprites/BBTAN-bot-game.png" id="2_8ukjn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kayl7"]
+size = Vector2(50, 1158)
+
+[node name="main" type="Node2D"]
+position = Vector2(52, 8)
+
+[node name="Paredes" type="Node2D" parent="."]
+position = Vector2(-50, -8)
+scale = Vector2(0.996591, 1.03007)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Paredes"]
+position = Vector2(9, 162)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D"]
+position = Vector2(-34, 419)
+shape = SubResource("RectangleShape2D_kayl7")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Paredes"]
+position = Vector2(706.408, 92.2272)
+scale = Vector2(1, 0.84467)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D2"]
+position = Vector2(-34, 419)
+shape = SubResource("RectangleShape2D_kayl7")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Paredes"]
+position = Vector2(842, -41)
+scale = Vector2(15.212, 0.04)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D3"]
+position = Vector2(-34, 419)
+shape = SubResource("RectangleShape2D_kayl7")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Paredes"]
+position = Vector2(792.702, 898.972)
+scale = Vector2(13.6414, 0.0400275)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D4"]
+position = Vector2(-34, 419)
+shape = SubResource("RectangleShape2D_kayl7")
+
+[node name="shooter" type="Node2D" parent="."]
+position = Vector2(283, 793)
+script = ExtResource("1_eguow")
+max_shoots = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="shooter"]
+position = Vector2(-8, -12)
+scale = Vector2(0.645455, 0.645455)
+texture = ExtResource("2_8ukjn")
+
+[node name="Cooldown" type="Timer" parent="shooter"]
+wait_time = 0.094
+
+[connection signal="timeout" from="shooter/Cooldown" to="shooter" method="_on_cooldown_timeout"]
