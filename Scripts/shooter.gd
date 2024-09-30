@@ -12,8 +12,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("Left_click"):
 		if get_global_mouse_position().y <= 750:
 			cooldown_timer.start()
-	print_debug(get_global_mouse_position().y)
-
+	print_debug(get_global_mouse_position().y)	
 
 func shoot():
 		var instance = projectile_scene.instantiate()
