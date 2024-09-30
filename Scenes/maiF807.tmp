@@ -69,6 +69,7 @@ texture = ExtResource("1_g35mx")
 [node name="shooter" type="Node2D" parent="."]
 position = Vector2(-45, 807)
 script = ExtResource("1_eguow")
+max_shoots = null
 
 [node name="Sprite2D" type="Sprite2D" parent="shooter"]
 position = Vector2(-8, -12)
