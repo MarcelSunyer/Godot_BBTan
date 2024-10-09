@@ -19,4 +19,6 @@ func _ready():
 func _physics_process(delta):
 	var collision_info = move_and_collide(vel * delta)
 	if collision_info:
+		if collision_info.get_collider_id() == 28319941916:
+			queue_free()
 		vel = vel.bounce(collision_info.get_normal())

@@ -51,16 +51,15 @@ collision_layer = 2
 position = Vector2(-34, 419)
 shape = SubResource("RectangleShape2D_kayl7")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Paredes"]
+[node name="Restart" type="StaticBody2D" parent="Paredes"]
 position = Vector2(794.709, 912.559)
 scale = Vector2(13.6414, 0.0400275)
-collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D4"]
+[node name="Restart" type="CollisionShape2D" parent="Paredes/Restart"]
 position = Vector2(-33.542, -2473.96)
 shape = SubResource("RectangleShape2D_kayl7")
 
-[node name="Sprite2D" type="Sprite2D" parent="Paredes/StaticBody2D4"]
+[node name="Sprite2D" type="Sprite2D" parent="Paredes/Restart"]
 modulate = Color(0.215686, 0, 0, 1)
 position = Vector2(-31.2617, -2886.27)
 scale = Vector2(0.252661, 1)
