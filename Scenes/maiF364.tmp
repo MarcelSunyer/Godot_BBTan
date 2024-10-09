@@ -1,15 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://drqe23shkgaxc"]
+[gd_scene load_steps=7 format=3 uid="uid://drqe23shkgaxc"]
 
 [ext_resource type="Script" path="res://Scripts/shooter.gd" id="1_eguow"]
+[ext_resource type="Texture2D" uid="uid://b7pbnqwvq0kim" path="res://Sprites/Ball.png" id="1_g35mx"]
 [ext_resource type="Texture2D" uid="uid://db0jiugpkilyg" path="res://Sprites/BBTAN-bot-game.png" id="2_8ukjn"]
-[ext_resource type="Script" path="res://Scenes/restart.gd" id="3_nyxpa"]
 [ext_resource type="Texture2D" uid="uid://88jvro23ymoa" path="res://Sprites/Proyecto nuevo (8).png" id="4_4f3ii"]
 [ext_resource type="Script" path="res://Scripts/aim.gd" id="5_4um4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kayl7"]
 size = Vector2(50, 1158)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvj1d"]
 
 [node name="main" type="Node2D"]
 position = Vector2(52, 8)
@@ -53,17 +51,24 @@ collision_layer = 2
 position = Vector2(-34, 419)
 shape = SubResource("RectangleShape2D_kayl7")
 
-[node name="Restart" type="Area2D" parent="Paredes" groups=["Destroy"]]
-position = Vector2(327.115, 900.91)
-scale = Vector2(36.8806, 2.2923)
-script = ExtResource("3_nyxpa")
+[node name="Restart" type="StaticBody2D" parent="Paredes"]
+position = Vector2(794.709, 912.559)
+scale = Vector2(13.6414, 0.0400275)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/Restart"]
-shape = SubResource("RectangleShape2D_wvj1d")
+[node name="Restart" type="CollisionShape2D" parent="Paredes/Restart"]
+position = Vector2(-33.542, -2473.96)
+shape = SubResource("RectangleShape2D_kayl7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paredes/Restart"]
+modulate = Color(0.215686, 0, 0, 1)
+position = Vector2(-31.2617, -2886.27)
+scale = Vector2(0.252661, 1)
+texture = ExtResource("1_g35mx")
 
 [node name="shooter" type="Node2D" parent="."]
 position = Vector2(-45, 807)
 script = ExtResource("1_eguow")
+max_shoots = null
 
 [node name="Sprite2D" type="Sprite2D" parent="shooter"]
 position = Vector2(-8, -12)
@@ -77,7 +82,7 @@ wait_time = 0.094
 position = Vector2(-50, 456)
 
 [node name="Shoots" type="Node2D" parent="."]
-scale = Vector2(1, 0.003)
+position = Vector2(461.13, -36.2329)
+scale = Vector2(15.1601, 0.0412028)
 
-[connection signal="area_entered" from="Paredes/Restart" to="Paredes/Restart" method="_on_area_entered"]
 [connection signal="timeout" from="shooter/Cooldown" to="shooter" method="_on_cooldown_timeout"]

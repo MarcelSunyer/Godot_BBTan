@@ -15,10 +15,14 @@ func _ready():
 	var mouse_pos = get_global_mouse_position()
 	vel = (mouse_pos - global_position).normalized() * speed
 	vel = vel.rotated(dir)
+	
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(vel * delta)
 	if collision_info:
-		if collision_info.get_collider_id() == 28319941916:
-			queue_free()
 		vel = vel.bounce(collision_info.get_normal())
+
+
+func _on_area_2d_area_entered(area):
+	if area.name == "Destroy":
+		queue_free()		
