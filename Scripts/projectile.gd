@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 700
 @export var reset_layer = 4  # Capa en la que se destruirá el proyectil
 
+
 var dir: float
 var spawnPos: Vector2
 var spawnRot: float
@@ -33,4 +34,5 @@ func _physics_process(delta):
 func remove_from_balls():
 	if main_node and self in main_node.balls:
 		main_node.balls.erase(self)  # Eliminamos el proyectil de la lista
-	var balls: Array = [] 
+
+	
