@@ -33,6 +33,6 @@ func _physics_process(delta):
 
 func remove_from_balls():
 	if main_node and self in main_node.balls:
-		main_node.balls.erase(self)  # Eliminamos el proyectil de la lista
+		main_node.balls.erase(self)  # Eliminamos el proyectil de la lisa
 
 	
