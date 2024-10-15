@@ -8,6 +8,8 @@ var spawnPos: Vector2
 var spawnRot: float
 var vel: Vector2
 
+var main_node  # Aquí guardaremos la referencia al nodo que tiene 'balls'
+
 func _ready():
 	global_position = spawnPos
 	global_rotation = spawnRot
@@ -21,12 +23,14 @@ func _physics_process(delta):
 	var collision_info = move_and_collide(vel * delta)
 	if collision_info:
 		var collider = collision_info.get_collider()
-
-		# Imprimir información para depurar la capa del objeto colisionado
-		print("Colisión con capa: ", collider.collision_layer)
-
 		# Destruir si la capa coincide
 		if collider.collision_layer == reset_layer:
+			remove_from_balls()  # Llamamos al método para eliminar de la lista
 			queue_free()
 		else:
 			vel = vel.bounce(collision_info.get_normal())
+
+func remove_from_balls():
+	if main_node and self in main_node.balls:
+		main_node.balls.erase(self)  # Eliminamos el proyectil de la lista
+	var balls: Array = [] 
