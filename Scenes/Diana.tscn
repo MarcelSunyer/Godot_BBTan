@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjmssn43ttihi"]
-
-[ext_resource type="Texture2D" uid="uid://b2caaopa1b8t1" path="res://Sprites/51e74WwYIFL._SR290,290_.jpg" id="1_qg8yc"]
-
-[node name="Diana" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.351724, 0.351724)
-texture = ExtResource("1_qg8yc")

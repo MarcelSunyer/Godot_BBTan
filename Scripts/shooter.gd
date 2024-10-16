@@ -4,7 +4,6 @@ extends Node2D
 @onready var projectile_scene = preload("res://Scenes/projectile.tscn")
 @onready var cooldown_timer = $Cooldown
 
-var diana_scene = preload("res://Scenes/Diana.tscn")
 var diana: Node2D = null  # Referencia a la diana creada
 var target_position: Vector2  # Posición hacia donde apuntarán los disparos
 
