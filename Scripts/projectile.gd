@@ -13,9 +13,6 @@ func _ready():
 	global_position = spawnPos  # Colocar en la posición de inicio
 	global_rotation = spawnRot  # Aplicar la rotación inicial
 
-	# No recalculamos la dirección aquí, ya que `vel` debe venir asignada
-	# desde el nodo principal (por consistencia).
-
 func _physics_process(delta):
 	var collision_info = move_and_collide(vel * delta)  # Mover el proyectil
 
