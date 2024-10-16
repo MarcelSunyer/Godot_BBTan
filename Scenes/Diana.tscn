@@ -5,6 +5,5 @@
 [node name="Diana" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-94, -94)
 scale = Vector2(0.351724, 0.351724)
 texture = ExtResource("1_qg8yc")
