@@ -41,6 +41,7 @@ Left_click={
 
 2d_physics/layer_2="Walls"
 2d_physics/layer_3="Reset"
+2d_physics/layer_5="Bloque"
 
 [rendering]
 

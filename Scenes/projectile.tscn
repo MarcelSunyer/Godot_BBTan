@@ -8,7 +8,7 @@
 [node name="Projectile" type="CharacterBody2D" groups=["Ball"]]
 scale = Vector2(0.0799983, 0.0799995)
 collision_layer = 0
-collision_mask = 15
+collision_mask = 31
 script = ExtResource("1_4wvr5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
