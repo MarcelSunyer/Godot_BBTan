@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1tcbtp13aub2"]
+
+[ext_resource type="Script" path="res://Scripts/block_life.gd" id="1_1ly8y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50mok"]
+
+[node name="Bloques" type="Node2D" groups=["bloque"]]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(14.2969, 3.89138)
+script = ExtResource("1_1ly8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_50mok")
+
+[node name="Label" type="Label" parent="StaticBody2D"]
+offset_left = -7.0
+offset_top = -5.0
+offset_right = 70.0
+offset_bottom = 18.0
+scale = Vector2(0.2, 0.32)
+text = "Josemaria"

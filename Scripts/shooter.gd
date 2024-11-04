@@ -45,3 +45,6 @@ func shoot():
 func _on_cooldown_timeout():
 	if canshoot:
 		shoot()
+
+func move_to_ball_position(position: Vector2):
+	global_position.x = position.x  # Mueve el personaje a la posición de la bola destruida
