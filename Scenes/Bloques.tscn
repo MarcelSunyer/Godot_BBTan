@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1tcbtp13aub2"]
+[gd_scene load_steps=4 format=3 uid="uid://c1tcbtp13aub2"]
 
 [ext_resource type="Script" path="res://Scripts/block_life.gd" id="1_1ly8y"]
+[ext_resource type="Texture2D" uid="uid://4ddq6puaop7g" path="res://Sprites/icon.svg" id="2_weaxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50mok"]
+size = Vector2(4.47649, 15.1617)
 
 [node name="Bloques" type="Node2D" groups=["bloque"]]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["bloque"]]
-scale = Vector2(14.2969, 3.89138)
+scale = Vector2(17.0527, 4.65138)
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_1ly8y")
@@ -15,10 +17,15 @@ script = ExtResource("1_1ly8y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_50mok")
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(0.0383905, 0.116888)
+texture = ExtResource("2_weaxy")
+
 [node name="Label" type="Label" parent="StaticBody2D"]
-offset_left = -7.0
-offset_top = -5.0
-offset_right = 70.0
-offset_bottom = 18.0
-scale = Vector2(0.2, 0.32)
-text = "Josemaria"
+modulate = Color(0, 0, 0, 1)
+offset_left = -0.349726
+offset_top = -2.82676
+offset_right = 76.6503
+offset_bottom = 20.1732
+scale = Vector2(0.0405249, 0.32)
+text = "1"

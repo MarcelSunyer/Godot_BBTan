@@ -80,6 +80,7 @@ position = Vector2(-50, 456)
 scale = Vector2(1, 0.003)
 
 [node name="CreaciónBloques" parent="." instance=ExtResource("5_mx1pn")]
-position = Vector2(-328, 157)
+position = Vector2(-298, 76)
+max_bloques = 6
 
 [connection signal="timeout" from="shooter/Cooldown" to="shooter" method="_on_cooldown_timeout"]
