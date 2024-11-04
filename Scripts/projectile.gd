@@ -9,6 +9,7 @@ var spawnRot: float
 var vel: Vector2
 
 var main_node
+var has_moved = false  # Variable de control para mover solo con la primera bola destruida
 
 func _ready():
 	global_position = spawnPos 
@@ -24,7 +25,7 @@ func _physics_process(delta):
 			collider.reduce_vida()
 			
 		if collider.collision_layer == reset_layer:
-			remove_from_balls() 
+			remove_from_balls()
 			queue_free()
 		else:
 			vel = vel.bounce(collision_info.get_normal())
@@ -32,4 +33,9 @@ func _physics_process(delta):
 func remove_from_balls():
 	if main_node and self in main_node.balls:
 		main_node.balls.erase(self) 
-		main_node.move_to_ball_position(global_position)
+		if not has_moved:  # Mover solo si no se ha movido en esta ronda
+			main_node.move_to_ball_position(global_position)
+			has_moved = true  # Marcar que ya se ha movido en esta ronda
+
+func start_new_round():
+	has_moved = false

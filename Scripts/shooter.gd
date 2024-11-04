@@ -11,6 +11,7 @@ var target_position: Vector2  # Posición hacia donde apuntarán los disparos
 var current_shots = 0
 var balls: Array = []
 var canshoot = false
+var has_moved = false  # Control para mover solo una vez por ronda
 
 func _process(delta):
 	if Input.is_action_just_pressed("Left_click"):
@@ -23,6 +24,7 @@ func _process(delta):
 	# Permitir reiniciar el conteo de disparos si ya no hay proyectiles activos
 	if balls.is_empty() and Input.is_action_just_pressed("Left_click"):
 		reset_shots()
+		start_new_round()  # Reiniciar la ronda al resetear los disparos
 
 func reset_shots():
 	current_shots = 0  # Reiniciar el conteo de disparos
@@ -47,4 +49,9 @@ func _on_cooldown_timeout():
 		shoot()
 
 func move_to_ball_position(position: Vector2):
-	global_position.x = position.x  # Mueve el personaje a la posición de la bola destruida
+	if not has_moved:  # Solo mover si no se ha movido en esta ronda
+		global_position = position  # Mueve el personaje a la posición de la bola destruida
+		has_moved = true  # Marcar que ya se ha movido en esta ronda
+
+func start_new_round():
+	has_moved = false  # Permitir movimiento en la nueva ronda
