@@ -36,6 +36,3 @@ func remove_from_balls():
 		if not has_moved:  # Mover solo si no se ha movido en esta ronda
 			main_node.move_to_ball_position(global_position)
 			has_moved = true  # Marcar que ya se ha movido en esta ronda
-
-func start_new_round():
-	has_moved = false

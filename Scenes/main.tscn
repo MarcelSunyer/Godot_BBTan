@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://drqe23shkgaxc"]
+[gd_scene load_steps=9 format=3 uid="uid://drqe23shkgaxc"]
 
 [ext_resource type="Script" path="res://Scripts/shooter.gd" id="1_eguow"]
-[ext_resource type="Texture2D" uid="uid://db0jiugpkilyg" path="res://Sprites/BBTAN-bot-game.png" id="2_8ukjn"]
+[ext_resource type="Texture2D" uid="uid://ddfobhhidq26a" path="res://Sprites/Fondo.png" id="1_gjxv7"]
 [ext_resource type="Texture2D" uid="uid://88jvro23ymoa" path="res://Sprites/Proyecto nuevo (8).png" id="4_4f3ii"]
 [ext_resource type="Script" path="res://Scripts/aim.gd" id="5_4um4b"]
+[ext_resource type="Texture2D" uid="uid://deh0wulvrbtmg" path="res://Sprites/Glotones/Gloton_1.png" id="5_86hln"]
 [ext_resource type="PackedScene" uid="uid://crurylq0er4uq" path="res://Scenes/Creación_bloques.tscn" id="5_mx1pn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kayl7"]
@@ -18,8 +19,14 @@ position = Vector2(52, 8)
 position = Vector2(-378, 6)
 scale = Vector2(0.996591, 1.03007)
 
+[node name="Fondo" type="Sprite2D" parent="Paredes"]
+position = Vector2(331.129, 437.054)
+scale = Vector2(1.007, 0.978)
+texture = ExtResource("1_gjxv7")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Paredes"]
-position = Vector2(9, 162)
+position = Vector2(11.0376, 113.585)
+scale = Vector2(0.42, 0.772)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D"]
@@ -28,8 +35,8 @@ scale = Vector2(1.07419, 1)
 shape = SubResource("RectangleShape2D_kayl7")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Paredes"]
-position = Vector2(706.408, 92.2272)
-scale = Vector2(1, 0.84467)
+position = Vector2(677.309, 109.701)
+scale = Vector2(0.42, 0.775)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D2"]
@@ -37,8 +44,8 @@ position = Vector2(-34, 419)
 shape = SubResource("RectangleShape2D_kayl7")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Paredes"]
-position = Vector2(842, -41)
-scale = Vector2(15.212, 0.04)
+position = Vector2(790.695, 38.8323)
+scale = Vector2(13.737, 0.015)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D3"]
@@ -46,7 +53,8 @@ position = Vector2(-34, 419)
 shape = SubResource("RectangleShape2D_kayl7")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Paredes"]
-position = Vector2(320.091, 884.406)
+position = Vector2(330.125, 847.515)
+scale = Vector2(0.790832, 1)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D4"]
@@ -67,8 +75,8 @@ script = ExtResource("5_4um4b")
 
 [node name="Sprite2D" type="Sprite2D" parent="shooter"]
 position = Vector2(-8, -12)
-scale = Vector2(0.645455, 0.645455)
-texture = ExtResource("2_8ukjn")
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_86hln")
 
 [node name="Cooldown" type="Timer" parent="shooter"]
 wait_time = 0.094
@@ -80,7 +88,6 @@ position = Vector2(-50, 456)
 scale = Vector2(1, 0.003)
 
 [node name="CreaciónBloques" parent="." instance=ExtResource("5_mx1pn")]
-position = Vector2(-298, 76)
-max_bloques = 6
+position = Vector2(-242, 135)
 
 [connection signal="timeout" from="shooter/Cooldown" to="shooter" method="_on_cooldown_timeout"]
