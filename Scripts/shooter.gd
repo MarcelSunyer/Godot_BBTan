@@ -10,7 +10,8 @@ var target_position: Vector2  # Posición hacia donde apuntarán los disparos
 @export var max_shoots = 1
 var current_shots = 0
 var balls: Array = []
-var has_moved = false  # Control para mover solo una vez por ronda
+var can_moved = false  # Control para mover solo una vez por ronda
+var can_create_blocks = false
 
 func _process(delta):
 	if Input.is_action_just_pressed("Left_click"):
@@ -23,6 +24,7 @@ func _process(delta):
 	if balls.is_empty() and Input.is_action_just_pressed("Left_click"):
 		reset_shots()
 		start_new_round()  # Reiniciar la ronda al resetear los disparos
+	spawm_boxes()
 
 func reset_shots():
 	current_shots = 0  # Reiniciar el conteo de disparos
@@ -46,9 +48,15 @@ func _on_cooldown_timeout():
 		shoot()
 
 func move_to_ball_position(position: Vector2):
-	if not has_moved:  # Solo mover si no se ha movido en esta ronda
+	if not can_moved:  # Solo mover si no se ha movido en esta ronda
 		global_position.x = position.x  # Mueve el personaje a la posición de la bola destruida
-		has_moved = true  # Marcar que ya se ha movido en esta ronda
+		can_moved = true  # Marcar que ya se ha movido en esta ronda
 
 func start_new_round():
-	has_moved = false  # Permitir movimiento en la nueva ronda
+	can_moved = false  # Permitir movimiento en la nueva ronda
+	can_create_blocks = false
+
+func spawm_boxes():
+	if balls.is_empty() && can_moved: #me falta esto
+		can_create_blocks = true
+	
