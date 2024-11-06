@@ -13,23 +13,32 @@ var balls: Array = []
 var can_moved = false  # Control para mover solo una vez por ronda
 var can_create_blocks = false  # Control para permitir la creación de bloques
 var round_started = false  # Flag para indicar si la ronda ha comenzado
+var cant_shoot = false
 
-func _process(delta):
-	if Input.is_action_just_pressed("Left_click") and not round_started:
+func _physics_process(delta):
+	var mouse_position = get_global_mouse_position()
+	if(mouse_position.y <=	775 ):
+		cant_shoot = false
+	else:
+		cant_shoot = true
+	if not cant_shoot:	
+		if Input.is_action_just_pressed("Left_click") and not round_started:
 		# Iniciar la ronda con el clic y establecer la posición de la diana
-		target_position = get_global_mouse_position()
-		round_started = true  # Marcar que la ronda ha comenzado
-		if cooldown_timer.is_stopped():
-			cooldown_timer.start()
+			target_position = get_global_mouse_position()
+		
+			round_started = true  # Marcar que la ronda ha comenzado
+			if cooldown_timer.is_stopped():
+				cooldown_timer.start()
 
 	# Lógica para el fin de ronda al destruir todas las bolas y mover solo si ya se disparó
-	if balls.is_empty() and can_moved:
-		end_session()
+		if balls.is_empty() and can_moved:
+			end_session()
 
 func reset_shots():
 	current_shots = 0  # Reiniciar el conteo de disparos
 
 func shoot():
+
 	if round_started and current_shots < max_shoots:
 		var instance = projectile_scene.instantiate()
 		instance.spawnPos = global_position  # Posición inicial del proyectil
