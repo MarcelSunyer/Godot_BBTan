@@ -20,17 +20,19 @@ func crear_fila_bloques():
 	posiciones_ocupadas.clear()  # Reiniciar las posiciones ocupadas cada ronda
 
 	for i in range(max_bloques):
-		var block_instance = block_scene.instantiate()
-		add_child(block_instance)
+		# Generar un bloque solo si la probabilidad es 65% o menor
+		if randf() <= 0.65:
+			var block_instance = block_scene.instantiate()
+			add_child(block_instance)
 
-		# Posición única para cada bloque, evitando posiciones anteriores
-		var posicion_x = i * espacio_entre_bloques
-		while posicion_x in posiciones_ocupadas:
-			posicion_x += espacio_entre_bloques
+			# Posición única para cada bloque, evitando posiciones anteriores
+			var posicion_x = i * espacio_entre_bloques
+			while posicion_x in posiciones_ocupadas:
+				posicion_x += espacio_entre_bloques
 
-		block_instance.position = Vector2(posicion_x, 0)
-		posiciones_ocupadas.append(posicion_x)  # Guardar la posición usada
-		bloques.append(block_instance)
+			block_instance.position = Vector2(posicion_x, 0)
+			posiciones_ocupadas.append(posicion_x)  # Guardar la posición usada
+			bloques.append(block_instance)
 
 func bajar_bloques():
 	# Mover cada bloque hacia abajo
@@ -38,11 +40,10 @@ func bajar_bloques():
 		bloque.position.y += distancia_bajada
 
 func check_start_round():
-	# Verificar si `start_round.has_moved` es `true` para iniciar la ronda
+	# Verificar si `start_round.can_create_blocks` es `true` para iniciar la ronda
 	if start_round.can_create_blocks:
-		bajar_bloques()
-		crear_fila_bloques()
-		# Restablecer `has_moved` para la próxima ronda
+		bajar_y_generar_bloques()
+		# Restablecer `can_create_blocks` para la próxima ronda
 		start_round.can_create_blocks = false
 		
 func bajar_y_generar_bloques():
