@@ -2,10 +2,11 @@ extends Node2D
 
 @export var max_bloques = 5
 @export var espacio_entre_bloques = 100  # Espacio horizontal entre bloques
-@export var distancia_bajada = 50  # Distancia que los bloques bajan cada ronda
+@export var distancia_bajada = 100  # Distancia que los bloques bajan cada ronda
 @onready var block_scene = preload("res://Scenes/Bloques.tscn")
 @onready var start_round = get_parent().get_node("shooter")
 
+var posiciones_ocupadas = []
 var bloques = []  # Array para almacenar los bloques instanciados
 
 func _ready():
@@ -16,15 +17,19 @@ func _process(delta):
 	check_start_round()
 
 func crear_fila_bloques():
-	# Crear y organizar los bloques en fila
+	posiciones_ocupadas.clear()  # Reiniciar las posiciones ocupadas cada ronda
+
 	for i in range(max_bloques):
 		var block_instance = block_scene.instantiate()
 		add_child(block_instance)
-		
-		# Posicionar el bloque en fila
-		block_instance.position = Vector2(i * espacio_entre_bloques, 0)
-		
-		# Añadir el bloque al array
+
+		# Posición única para cada bloque, evitando posiciones anteriores
+		var posicion_x = i * espacio_entre_bloques
+		while posicion_x in posiciones_ocupadas:
+			posicion_x += espacio_entre_bloques
+
+		block_instance.position = Vector2(posicion_x, 0)
+		posiciones_ocupadas.append(posicion_x)  # Guardar la posición usada
 		bloques.append(block_instance)
 
 func bajar_bloques():
@@ -35,9 +40,11 @@ func bajar_bloques():
 func check_start_round():
 	# Verificar si `start_round.has_moved` es `true` para iniciar la ronda
 	if start_round.can_create_blocks:
-		
 		bajar_bloques()
 		crear_fila_bloques()
-		
 		# Restablecer `has_moved` para la próxima ronda
 		start_round.can_create_blocks = false
+		
+func bajar_y_generar_bloques():
+	bajar_bloques()  # Baja los bloques actuales
+	crear_fila_bloques()  # Genera una nueva fila al inicio de la ronda

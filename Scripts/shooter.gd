@@ -11,27 +11,26 @@ var target_position: Vector2  # Posición hacia donde apuntarán los disparos
 var current_shots = 0
 var balls: Array = []
 var can_moved = false  # Control para mover solo una vez por ronda
-var can_create_blocks = false
+var can_create_blocks = false  # Control para permitir la creación de bloques
+var round_started = false  # Flag para indicar si la ronda ha comenzado
 
 func _process(delta):
-	if Input.is_action_just_pressed("Left_click"):
-		target_position = get_global_mouse_position()  # Guardamos la posición del clic
-		
+	if Input.is_action_just_pressed("Left_click") and not round_started:
+		# Iniciar la ronda con el clic y establecer la posición de la diana
+		target_position = get_global_mouse_position()
+		round_started = true  # Marcar que la ronda ha comenzado
 		if cooldown_timer.is_stopped():
 			cooldown_timer.start()
 
-	# Permitir reiniciar el conteo de disparos si ya no hay proyectiles activos
-	if balls.is_empty() and Input.is_action_just_pressed("Left_click"):
-		reset_shots()
-		start_new_round()  # Reiniciar la ronda al resetear los disparos
-	spawm_boxes()
+	# Lógica para el fin de ronda al destruir todas las bolas y mover solo si ya se disparó
+	if balls.is_empty() and can_moved:
+		end_session()
 
 func reset_shots():
 	current_shots = 0  # Reiniciar el conteo de disparos
-	max_shoots += 1 
 
 func shoot():
-	if current_shots < max_shoots:
+	if round_started and current_shots < max_shoots:
 		var instance = projectile_scene.instantiate()
 		instance.spawnPos = global_position  # Posición inicial del proyectil
 		instance.main_node = self  # Pasar la referencia al nodo principal
@@ -45,7 +44,7 @@ func shoot():
 		current_shots += 1
 
 func _on_cooldown_timeout():
-		shoot()
+	shoot()
 
 func move_to_ball_position(position: Vector2):
 	if not can_moved:  # Solo mover si no se ha movido en esta ronda
@@ -53,10 +52,26 @@ func move_to_ball_position(position: Vector2):
 		can_moved = true  # Marcar que ya se ha movido en esta ronda
 
 func start_new_round():
-	can_moved = false  # Permitir movimiento en la nueva ronda
-	can_create_blocks = false
+	can_moved = false  # Resetear para permitir movimiento en la nueva ronda
+	current_shots = 0  # Reiniciar el conteo de disparos
+	max_shoots += 1  # Aumentar el número máximo de disparos cada ronda
+	round_started = false  # Esperar clic del jugador para comenzar la ronda
 
-func spawm_boxes():
-	if balls.is_empty() && can_moved: #me falta esto
-		can_create_blocks = true
-	
+	# Lógica de preparación de las bolas para la nueva ronda
+	print("Nueva ronda preparada, esperando clic del jugador...")
+
+func end_session():
+	can_moved = false  # Permitir movimiento en la siguiente ronda
+	can_create_blocks = true  # Permitir creación de bloques en la nueva ronda
+
+	# Notificar a los bloques para bajar y crear una nueva fila
+	var blocks_node = get_parent().get_node("creació_blocks")
+	if blocks_node:
+		blocks_node.bajar_y_generar_bloques()
+
+	# Mueve al jugador a la posición de la primera bola destruida
+	if balls.size() > 0:
+		move_to_ball_position(balls[0].global_position)
+
+	# Preparar para una nueva ronda sin comenzarla automáticamente
+	start_new_round()
