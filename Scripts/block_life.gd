@@ -11,8 +11,6 @@ func _process(delta):
 	# Verificar la posición en y solo si `exit_game` es false
 	if not exit_game and global_position.y >= 700:
 		exit_game = true
-		print("El bloque ha alcanzado o superado la posición Y = 700")
-		# Puedes agregar aquí cualquier acción adicional si es necesario
 
 func reduce_vida():
 	vida -= 1

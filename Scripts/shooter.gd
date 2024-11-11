@@ -66,9 +66,6 @@ func start_new_round():
 	max_shoots += 1  # Aumentar el número máximo de disparos cada ronda
 	round_started = false  # Esperar clic del jugador para comenzar la ronda
 
-	# Lógica de preparación de las bolas para la nueva ronda
-	print("Nueva ronda preparada, esperando clic del jugador...")
-
 func end_session():
 	can_moved = false  # Permitir movimiento en la siguiente ronda
 	can_create_blocks = true  # Permitir creación de bloques en la nueva ronda
@@ -82,5 +79,4 @@ func end_session():
 	if balls.size() > 0:
 		move_to_ball_position(balls[0].global_position)
 
-	# Preparar para una nueva ronda sin comenzarla automáticamente
 	start_new_round()
