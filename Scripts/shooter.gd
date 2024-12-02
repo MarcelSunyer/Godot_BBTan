@@ -10,9 +10,9 @@ var target_position: Vector2  # Posición hacia donde apuntarán los disparos
 @export var max_shoots = 1
 var current_shots = 0
 var balls: Array = []
-var can_moved = false  # Control para mover solo una vez por ronda
-var can_create_blocks = false  # Control para permitir la creación de bloques
-var round_started = false  # Flag para indicar si la ronda ha comenzado
+var can_moved = false
+var can_create_blocks = false
+var round_started = false 
 var cant_shoot = false
 
 func _physics_process(delta):
@@ -23,33 +23,29 @@ func _physics_process(delta):
 		cant_shoot = true
 	if not cant_shoot:	
 		if Input.is_action_just_pressed("Left_click") and not round_started:
-		# Iniciar la ronda con el clic y establecer la posición de la diana
 			target_position = get_global_mouse_position()
 		
-			round_started = true  # Marcar que la ronda ha comenzado
+			round_started = true 
 			if cooldown_timer.is_stopped():
 				cooldown_timer.start()
 
-	# Lógica para el fin de ronda al destruir todas las bolas y mover solo si ya se disparó
 		if balls.is_empty() and can_moved:
 			end_session()
 
 func reset_shots():
-	current_shots = 0  # Reiniciar el conteo de disparos
+	current_shots = 0 
 
 func shoot():
-
 	if round_started and current_shots < max_shoots:
 		var instance = projectile_scene.instantiate()
-		instance.spawnPos = global_position  # Posición inicial del proyectil
-		instance.main_node = self  # Pasar la referencia al nodo principal
+		instance.spawnPos = global_position
+		instance.main_node = self  
 
-		# Calcular la dirección hacia la diana seleccionada
 		var direction = (target_position - global_position).normalized()
-		instance.vel = direction * instance.speed  # Asignar velocidad
-
-		main.add_child(instance)  # Añadir el proyectil a la escena
-		balls.append(instance)  # Guardar en la lista de proyectiles
+		instance.vel = direction * instance.speed 
+		
+		main.add_child(instance) 
+		balls.append(instance) 
 		current_shots += 1
 
 func _on_cooldown_timeout():

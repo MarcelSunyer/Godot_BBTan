@@ -9,7 +9,7 @@ var spawnRot: float
 var vel: Vector2
 
 var main_node
-var moved = false  # Variable de control para mover solo con la primera bola destruida
+var moved = false 
 
 func _ready():
 	global_position = spawnPos 
@@ -33,6 +33,6 @@ func _physics_process(delta):
 func remove_from_balls():
 	if main_node and self in main_node.balls:
 		main_node.balls.erase(self) 
-		if not moved:  # Mover solo si no se ha movido en esta ronda
+		if not moved: 
 			main_node.move_to_ball_position(global_position)
-			moved = true  # Marcar que ya se ha movido en esta ronda
+			moved = true
