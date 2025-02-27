@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4arrr01gnbh5"
-path="res://.godot/imported/Exits.png-dd57f3d1fb7bd4f011a9ca3865381eff.ctex"
+uid="uid://ca1s7cnbyrbxk"
+path="res://.godot/imported/Exit.png-6ddb464001104df9d32b5d570d07c9fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Main Menu/Exits.png"
-dest_files=["res://.godot/imported/Exits.png-dd57f3d1fb7bd4f011a9ca3865381eff.ctex"]
+source_file="res://Sprites/Main Menu/Exit.png"
+dest_files=["res://.godot/imported/Exit.png-6ddb464001104df9d32b5d570d07c9fd.ctex"]
 
 [params]
 
