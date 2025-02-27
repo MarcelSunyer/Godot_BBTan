@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3qxktv1xpcnf"
-path="res://.godot/imported/Projecte nou.png-78d97f6ae2aa9b170f7ac6aee267d1f3.ctex"
+uid="uid://bjkxkxupvitu1"
+path="res://.godot/imported/Gloton BBTan.png-b3883dc173e1087489c83136ed2fc73b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Main Menu/Projecte nou.png"
-dest_files=["res://.godot/imported/Projecte nou.png-78d97f6ae2aa9b170f7ac6aee267d1f3.ctex"]
+source_file="res://Sprites/Main Menu/Gloton BBTan.png"
+dest_files=["res://.godot/imported/Gloton BBTan.png-b3883dc173e1087489c83136ed2fc73b.ctex"]
 
 [params]
 

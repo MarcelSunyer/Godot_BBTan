@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cljuylosttxw7"]
+[gd_scene load_steps=8 format=3 uid="uid://cljuylosttxw7"]
 
 [ext_resource type="Texture2D" uid="uid://ddfobhhidq26a" path="res://Sprites/Fondo.png" id="1_5uo6a"]
-[ext_resource type="Texture2D" uid="uid://c3qxktv1xpcnf" path="res://Sprites/Main Menu/Projecte nou.png" id="2_1qv0r"]
-[ext_resource type="Texture2D" uid="uid://bwwhcrcjywn2r" path="res://Sprites/Main Menu/Projecte nou (3).png" id="3_ik6p1"]
-[ext_resource type="Texture2D" uid="uid://rm526mf5aajj" path="res://Sprites/Main Menu/Play.png" id="4_b2elh"]
-[ext_resource type="Texture2D" uid="uid://bv27ayphdexd6" path="res://Sprites/Main Menu/Credits.png" id="5_ie1hw"]
+[ext_resource type="Texture2D" uid="uid://bjkxkxupvitu1" path="res://Sprites/Main Menu/Gloton BBTan.png" id="2_e5h00"]
+[ext_resource type="Texture2D" uid="uid://b8yedib8o3kos" path="res://Sprites/Main Menu/Projecte nou (22).png" id="3_rgfd0"]
+[ext_resource type="Texture2D" uid="uid://drs3y5nc62gv4" path="res://Sprites/Main Menu/Play.png" id="4_b2elh"]
+[ext_resource type="Texture2D" uid="uid://d4arrr01gnbh5" path="res://Sprites/Main Menu/Exits.png" id="5_4ycp7"]
+[ext_resource type="Texture2D" uid="uid://bcw3lf4t2xpi5" path="res://Sprites/Main Menu/Credits (1).png" id="6_cnhqb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r5qwu"]
+load_path = "res://.godot/imported/Naranja.png-c85e7096b873a215aa49c603fbdf9fad.ctex"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,44 +22,60 @@ grow_vertical = 2
 position = Vector2(323, 459)
 texture = ExtResource("1_5uo6a")
 
-[node name="ProjecteNou" type="Sprite2D" parent="."]
-position = Vector2(320, 295)
-scale = Vector2(1.12857, 1.41429)
-texture = ExtResource("2_1qv0r")
-
-[node name="ProjecteNou(3)" type="Sprite2D" parent="."]
-position = Vector2(341, 373)
-scale = Vector2(1.20291, 0.0178252)
-texture = ExtResource("3_ik6p1")
-
 [node name="ProjecteNou(3)2" type="Sprite2D" parent="."]
-position = Vector2(341, 219)
-scale = Vector2(1.20291, 0.0178252)
-texture = ExtResource("3_ik6p1")
+position = Vector2(323, 146.02)
+scale = Vector2(0.363, 0.013)
+texture = SubResource("CompressedTexture2D_r5qwu")
+
+[node name="ProjecteNou(3)3" type="Sprite2D" parent="."]
+position = Vector2(323, 312.02)
+scale = Vector2(0.363, 0.013)
+texture = SubResource("CompressedTexture2D_r5qwu")
+
+[node name="ProjecteNou" type="Sprite2D" parent="."]
+position = Vector2(314, 228)
+scale = Vector2(0.39876, 0.580683)
+texture = ExtResource("2_e5h00")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 485.0
-offset_right = 749.0
-offset_bottom = 968.0
-scale = Vector2(0.4, 0.24)
-icon = ExtResource("3_ik6p1")
-
-[node name="Play" type="Sprite2D" parent="Button"]
-position = Vector2(365.625, 245.833)
-scale = Vector2(2.35783, 2.45634)
-texture = ExtResource("4_b2elh")
+offset_left = 49.0
+offset_top = 437.0
+offset_right = 678.0
+offset_bottom = 796.0
+scale = Vector2(0.4, 0.4)
+icon = ExtResource("3_rgfd0")
+flat = true
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 332.0
-offset_top = 485.0
-offset_right = 1060.0
-offset_bottom = 968.0
-scale = Vector2(0.4, 0.24)
-icon = ExtResource("3_ik6p1")
+offset_left = 343.0
+offset_top = 437.0
+offset_right = 972.0
+offset_bottom = 796.0
+scale = Vector2(0.4, 0.4)
+icon = ExtResource("3_rgfd0")
+flat = true
 
-[node name="Play" type="Sprite2D" parent="Button2"]
-position = Vector2(362.5, 220.833)
-scale = Vector2(1.75783, 2.95633)
-texture = ExtResource("5_ie1hw")
+[node name="Button3" type="Button" parent="."]
+offset_left = 198.0
+offset_top = 622.0
+offset_right = 827.0
+offset_bottom = 981.0
+scale = Vector2(0.4, 0.4)
+icon = ExtResource("3_rgfd0")
+flat = true
+
+[node name="Play" type="Sprite2D" parent="."]
+position = Vector2(174, 509)
+scale = Vector2(0.36396, 0.36396)
+texture = ExtResource("4_b2elh")
+
+[node name="Exits" type="Sprite2D" parent="."]
+position = Vector2(322, 694)
+scale = Vector2(0.369302, 0.369302)
+texture = ExtResource("5_4ycp7")
+
+[node name="Credits(1)" type="Sprite2D" parent="."]
+position = Vector2(468, 508)
+scale = Vector2(0.263874, 0.294872)
+texture = ExtResource("6_cnhqb")
