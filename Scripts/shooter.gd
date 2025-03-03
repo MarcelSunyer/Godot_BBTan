@@ -16,6 +16,7 @@ var round_started = false
 var cant_shoot = false
 
 func _physics_process(delta):
+	globalInfo.SetBalls(max_shoots);
 	var mouse_position = get_global_mouse_position()
 	if(mouse_position.y <=	775 ):
 		cant_shoot = false
