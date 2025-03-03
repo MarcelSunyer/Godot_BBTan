@@ -8,9 +8,6 @@ func _ready():
 	vida = globalInfo.GetBalls();
 	vida_label.text = str(vida)
 	
-	
-	
-	
 func _process(delta):
 	if not exit_game and global_position.y >= 700:
 		exit_game = true
