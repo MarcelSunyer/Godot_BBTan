@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://ca1s7cnbyrbxk" path="res://Sprites/Main Menu/Exit.png" id="6_j3b60"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r5qwu"]
-load_path = "res://.godot/imported/Naranja.png-c85e7096b873a215aa49c603fbdf9fad.ctex"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,7 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_lhw04")
 
 [node name="Fondo" type="Sprite2D" parent="."]
-position = Vector2(323, 459)
+position = Vector2(320, 460)
 texture = ExtResource("1_5uo6a")
 
 [node name="ProjecteNou(3)2" type="Sprite2D" parent="."]
@@ -50,6 +49,7 @@ icon = ExtResource("3_rgfd0")
 flat = true
 
 [node name="Credits" type="Button" parent="."]
+layout_mode = 0
 offset_left = 343.0
 offset_top = 437.0
 offset_right = 972.0
@@ -59,6 +59,7 @@ icon = ExtResource("3_rgfd0")
 flat = true
 
 [node name="Exit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 198.0
 offset_top = 622.0
 offset_right = 827.0
@@ -82,8 +83,8 @@ position = Vector2(468, 508)
 scale = Vector2(0.263874, 0.294872)
 texture = ExtResource("6_cnhqb")
 
-[connection signal="pressed" from="Start" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

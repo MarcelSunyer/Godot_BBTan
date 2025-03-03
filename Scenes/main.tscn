@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://drqe23shkgaxc"]
+[gd_scene load_steps=10 format=3 uid="uid://drqe23shkgaxc"]
 
 [ext_resource type="Script" path="res://Scripts/shooter.gd" id="1_eguow"]
 [ext_resource type="Texture2D" uid="uid://ddfobhhidq26a" path="res://Sprites/Fondo.png" id="1_gjxv7"]
+[ext_resource type="Script" path="res://Scenes/Esc_button.gd" id="1_oxurd"]
 [ext_resource type="Texture2D" uid="uid://88jvro23ymoa" path="res://Sprites/Proyecto nuevo (8).png" id="4_4f3ii"]
 [ext_resource type="Script" path="res://Scripts/aim.gd" id="5_4um4b"]
 [ext_resource type="Texture2D" uid="uid://deh0wulvrbtmg" path="res://Sprites/Glotones/Gloton_1.png" id="5_86hln"]
@@ -14,6 +15,7 @@ size = Vector2(50, 1158)
 
 [node name="main" type="Node2D"]
 position = Vector2(52, 8)
+script = ExtResource("1_oxurd")
 
 [node name="Paredes" type="Node2D" parent="."]
 position = Vector2(-378, 6)

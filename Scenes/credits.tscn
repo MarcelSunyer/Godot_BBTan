@@ -1,3 +1,96 @@
-[gd_scene format=3 uid="uid://c3bmfxvp04pbm"]
+[gd_scene load_steps=12 format=3 uid="uid://c3bmfxvp04pbm"]
+
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_dlsoh"]
+[ext_resource type="Texture2D" uid="uid://ddfobhhidq26a" path="res://Sprites/Fondo.png" id="1_fy3sh"]
+[ext_resource type="Texture2D" uid="uid://c8iuq5umtky6q" path="res://Sprites/Credits/Credits.png" id="2_swl0b"]
+[ext_resource type="Texture2D" uid="uid://b5noo75fw53lw" path="res://Sprites/Credits/Script Writer.png" id="3_ursmm"]
+[ext_resource type="Texture2D" uid="uid://b4nlhqkrxkxvr" path="res://Sprites/Credits/Marcel S.png" id="4_ry0xj"]
+[ext_resource type="Texture2D" uid="uid://b7y3ddy8ou14m" path="res://Sprites/Credits/Art.png" id="5_a6wpm"]
+[ext_resource type="Texture2D" uid="uid://lams4nbsnnia" path="res://Sprites/Credits/Developer.png" id="6_w08lu"]
+[ext_resource type="Texture2D" uid="uid://dvbo44yfy4wpb" path="res://Sprites/Credits/GitHub.png" id="7_lbibf"]
+[ext_resource type="Texture2D" uid="uid://7p04kxvxemj0" path="res://Sprites/Credits/Linkedin.png" id="8_o0lad"]
+[ext_resource type="Texture2D" uid="uid://ny27tchqx4ki" path="res://Sprites/Credits/Website.png" id="9_0sokk"]
+[ext_resource type="Texture2D" uid="uid://c8e0vp2uihmi6" path="res://Sprites/Credits/Projecte nou (14).png" id="11_qqphm"]
 
 [node name="Credits" type="Node2D"]
+script = ExtResource("1_dlsoh")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(320, 460)
+texture = ExtResource("1_fy3sh")
+
+[node name="Credits" type="Sprite2D" parent="."]
+position = Vector2(315, 209)
+scale = Vector2(0.433007, 0.433007)
+texture = ExtResource("2_swl0b")
+
+[node name="ProjecteNou(3)" type="Sprite2D" parent="."]
+position = Vector2(323, 450)
+scale = Vector2(0.270425, 0.270425)
+texture = ExtResource("3_ursmm")
+
+[node name="ProjecteNou(4)" type="Sprite2D" parent="."]
+position = Vector2(319, 501)
+scale = Vector2(0.218954, 0.218954)
+texture = ExtResource("4_ry0xj")
+
+[node name="Art" type="Sprite2D" parent="."]
+position = Vector2(315, 548)
+scale = Vector2(0.272727, 0.272727)
+texture = ExtResource("5_a6wpm")
+
+[node name="ProjecteNou(4)2" type="Sprite2D" parent="."]
+position = Vector2(319, 598)
+scale = Vector2(0.218954, 0.218954)
+texture = ExtResource("4_ry0xj")
+
+[node name="Developer" type="Sprite2D" parent="."]
+position = Vector2(338, 344)
+scale = Vector2(0.272728, 0.272728)
+texture = ExtResource("6_w08lu")
+
+[node name="ProjecteNou(4)3" type="Sprite2D" parent="."]
+position = Vector2(319, 382)
+scale = Vector2(0.218954, 0.218954)
+texture = ExtResource("4_ry0xj")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 154.0
+offset_top = 728.0
+offset_right = 2552.0
+offset_bottom = 2904.0
+scale = Vector2(0.0278095, 0.0278095)
+icon = ExtResource("7_lbibf")
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 289.0
+offset_top = 721.0
+offset_right = 1669.0
+offset_bottom = 2234.0
+scale = Vector2(0.0527121, 0.0527121)
+icon = ExtResource("8_o0lad")
+flat = true
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 435.0
+offset_top = 726.0
+offset_right = 1909.0
+offset_bottom = 2246.0
+scale = Vector2(0.043, 0.043)
+icon = ExtResource("9_0sokk")
+flat = true
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 84.0
+offset_right = 486.0
+offset_bottom = 438.0
+scale = Vector2(0.272085, 0.273001)
+icon = ExtResource("11_qqphm")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
