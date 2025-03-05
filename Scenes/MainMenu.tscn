@@ -83,8 +83,8 @@ position = Vector2(468, 508)
 scale = Vector2(0.263874, 0.294872)
 texture = ExtResource("6_cnhqb")
 
-[connection signal="pressed" from="Start" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Credits" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

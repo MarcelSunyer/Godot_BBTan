@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1tcbtp13aub2"]
 
 [ext_resource type="Script" path="res://Scripts/block_life.gd" id="1_1ly8y"]
-[ext_resource type="Texture2D" uid="uid://4ddq6puaop7g" path="res://Sprites/icon.svg" id="2_weaxy"]
+[ext_resource type="Texture2D" uid="uid://dkiuoivv3nv5i" path="res://Sprites/Interactuables_game/Projecte nou (24).png" id="2_kjn11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50mok"]
-size = Vector2(4.47649, 15.1617)
+size = Vector2(4.92591, 15.1617)
 
 [node name="Bloques" type="Node2D" groups=["bloque"]]
 
@@ -15,17 +15,17 @@ collision_mask = 0
 script = ExtResource("1_1ly8y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.18841e-07, 0)
 shape = SubResource("RectangleShape2D_50mok")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(0.0383905, 0.116888)
-texture = ExtResource("2_weaxy")
+scale = Vector2(0.00789681, 0.0222924)
+texture = ExtResource("2_kjn11")
 
 [node name="Label" type="Label" parent="StaticBody2D"]
-modulate = Color(0, 0, 0, 1)
-offset_left = -0.349726
-offset_top = -2.82676
-offset_right = 76.6503
-offset_bottom = 20.1732
-scale = Vector2(0.0405249, 0.32)
+offset_left = -0.947
+offset_top = -7.215
+offset_right = 76.768
+offset_bottom = 15.785
+scale = Vector2(0.141, 0.619)
 text = "1"
