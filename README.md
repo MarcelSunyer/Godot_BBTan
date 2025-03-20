@@ -19,8 +19,6 @@ BBTAN is a fun and simple arcade game made in Godot, inspired by the classic BBT
 3. Press de Play and enjoy :)
 ## Credits
 - **Game Engine**: Godot
-- **Graphics**: 
-- **Sound**: 
 
 ## License
 This project is open-source and free to use. You are welcome to modify and improve it!
